@@ -1,0 +1,56 @@
+# Economy profile: cheapest defaults
+asr:
+  backend: faster_whisper
+  model_size: small
+  language: ru
+
+separation:
+  enabled: true
+  backend: demucs
+  model: htdemucs
+  two_stems: vocals
+
+translation:
+  backend: argos
+  src_lang: ru
+  tgt_lang: en
+
+segmentation:
+  min_dur_sec: 1.2
+  max_dur_sec: 9.0
+  split_on_punct: true
+
+timing_fit:
+  max_speedup: 1.20
+  max_slowdown: 0.90
+  max_time_stretch: 0.12
+
+elevenlabs:
+  api_key_env: ELEVENLABS_API_KEY
+  model_id: eleven_turbo_v2
+  output_format: mp3_22050_32
+  language_code: en
+  credits_per_character: 0.5
+  voice_settings:
+    stability: 0.35
+    similarity_boost: 0.85
+    style: 0.0
+    use_speaker_boost: true
+    speed: 1.0
+
+voice_router:
+  primary_voice_id: "PUT_YOUR_VOICE_ID_HERE"
+  fallback_voice_id: null
+  accent_test_enabled: false
+  accent_test_segments: 2
+  accent_test_wer_threshold: 0.20
+
+mix:
+  enabled: true
+  bg_gain_db: -4.0
+  voice_gain_db: 0.0
+  export_format: m4a
+
+cache:
+  root: ./cache
+  tts_subdir: tts
